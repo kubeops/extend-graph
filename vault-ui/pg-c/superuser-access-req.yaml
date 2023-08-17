@@ -1,0 +1,13 @@
+apiVersion: engine.kubevault.com/v1alpha1
+kind: SecretAccessRequest
+metadata:
+  name: postgres-cred-rqst
+  namespace: default
+spec:
+  roleRef:
+    kind: PostgresRole
+    name: pg-c-superuser
+  subjects:
+    - kind: ServiceAccount
+      name: default
+      namespace: demo
